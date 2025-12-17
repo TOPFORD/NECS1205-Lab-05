@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Fetch Demo (External JS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 20px;
+        }
+        .demo-area {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .demo-header h4 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .input-group input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .run-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .run-btn:hover {
+            background-color: #218838;
+        }
+        .output-box {
+            min-height: 20px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+        .cards-grid {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        /* Pokémon Card Styling */
+        .pokemon-card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 300px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .pokemon-image img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 10px;
+        }
+        .pokemon-card h3 {
+            margin: 5px 0 15px 0;
+            color: #343a40;
+        }
+        .type-badge {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+        .pokemon-stats {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #eee;
+            text-align: left;
+        }
+        .pokemon-stats h4 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .pokemon-stats ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pokemon-stats li {
+            background-color: #f8f9fa;
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="demo-area">
+    <div class="demo-header">
+        <h4>🧪 ทดลอง: ค้นหา Pokemon</h4>
+    </div>
+    <div class="input-group">
+        <input type="text" id="pokemon-search" placeholder="ชื่อ หรือ ID (เช่น pikachu, 25)"/>
+        <button class="run-btn" onclick="runPokemonDemo()">ค้นหา</button>
+    </div>
+    <div id="fetch-output-3" class="output-box">
+        <p style="color: #6a6a6a;">ลองค้นหา Pokemon ที่ชอบ...</p>
+    </div>
+    <div id="pokemon-display" class="cards-grid"></div>
+</div>
+
+<script src="poke.js" defer></script>
+
+</body>
+</html>
